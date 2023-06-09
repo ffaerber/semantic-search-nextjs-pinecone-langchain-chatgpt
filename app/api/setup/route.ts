@@ -7,9 +7,11 @@ import {
   createPineconeIndex,
   updatePinecone
 } from '../../../utils'
+
 import { indexName } from '../../../config'
 
 export async function POST() {
+
   const loader = new DirectoryLoader('./documents', {
     ".txt": (path) => new TextLoader(path),
     ".md": (path) => new TextLoader(path),
@@ -18,7 +20,6 @@ export async function POST() {
 
   const docs = await loader.load()
   const vectorDimensions = 1536
-
   const client = new PineconeClient()
   await client.init({
     apiKey: process.env.PINECONE_API_KEY || '',

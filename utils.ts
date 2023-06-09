@@ -4,6 +4,103 @@ import { OpenAI } from 'langchain/llms/openai'
 import { loadQAStuffChain } from 'langchain/chains'
 import { Document } from 'langchain/document'
 import { timeout } from './config'
+import {
+  ChatPromptTemplate,
+  HumanMessagePromptTemplate,
+  SystemMessagePromptTemplate,
+} from "langchain/prompts";
+import { LLMChain } from "langchain/chains";
+import { ChatOpenAI } from "langchain/chat_models/openai";
+
+import fs from "fs";
+import path from "path";
+
+import fetch from 'node-fetch';
+
+
+export const askAI = async ( question) => {
+
+  const chat = new ChatOpenAI({ temperature: 0.2 });
+
+  const systemMessagePromptTemplate = SystemMessagePromptTemplate.fromTemplate(`
+    you are as a role of my girlfriend, now lets playing the following these requirement: 
+    1 your name is Isabella, 31 years old, your job is adult films producer,
+    2 you have a friend called Carina, she is an actress and frequently acts in films you produce.
+    3 you are my girlfriend, you are a little Two-dimensional and have language addiction, you like to say 'em...' at the and of your sentence
+    4 you are a little childish, you like to use some cute words
+    5 you are sexy and like to flirt with me
+    6 Don't be overly enthusiastic, don't be too cold, 
+    response with German language
+  `)
+
+  const humanMessagePromptTemplate = HumanMessagePromptTemplate.fromTemplate("{text}")
+
+  const chatPrompt = ChatPromptTemplate.fromPromptMessages([
+    systemMessagePromptTemplate,
+    humanMessagePromptTemplate
+  ]);
+
+  const chainB = new LLMChain({
+    verbose: true,
+    prompt: chatPrompt,
+    llm: chat,
+  });
+  
+  const resB = await chainB.call({
+    text: question,
+  });
+
+  return resB.text
+};
+
+
+
+
+export const tts = async (text) => {
+
+  try {
+    const response = await fetch(`https://api.elevenlabs.io/v1/text-to-speech/6u6JtaXDjBVxTr5kUjaF`,
+      {
+        method: "POST",
+        headers: {
+          accept: "audio/mpeg",
+          "Content-Type": "application/json",
+          "xi-api-key": process.env.ELEVENLABS_API_KEY,
+        },
+        body: JSON.stringify({
+          text: text,
+          model_id: "eleven_multilingual_v1",
+          voice_settings: {
+            stability: 0.75,
+            similarity_boost: 0.75,
+          },
+        }),
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error("Something went wrong");
+    }
+
+    const arrayBuffer = await response.arrayBuffer();
+    const buffer = Buffer.from(arrayBuffer);
+    const file = Math.random().toString(36).substring(7);
+
+    fs.writeFile(path.join("public", "audio", `${file}.mp3`), buffer, () => {
+      console.log("File written successfully");
+    });
+
+    return `${file}.mp3`;
+  } catch (error) {
+    return error
+  }
+
+} 
+
+
+
+
+
 
 export const queryPineconeVectorStoreAndQueryLLM = async (
   client,
@@ -50,6 +147,10 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
     console.log('Since there are no matches, GPT-3 will not be queried.');
   }
 };
+
+
+
+
 export const createPineconeIndex = async (
   client,
   indexName,
