@@ -1,14 +1,18 @@
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { OpenAI } from 'langchain/llms/openai'
-import { loadQAStuffChain } from 'langchain/chains'
+import { ConversationChain, loadQAStuffChain } from 'langchain/chains'
 import { Document } from 'langchain/document'
 import { timeout } from './config'
 import {
   ChatPromptTemplate,
   HumanMessagePromptTemplate,
+  MessagesPlaceholder,
   SystemMessagePromptTemplate,
 } from "langchain/prompts";
+
+import { BufferMemory } from "langchain/memory";
+
 import { LLMChain } from "langchain/chains";
 import { ChatOpenAI } from "langchain/chat_models/openai";
 
@@ -17,12 +21,9 @@ import path from "path";
 
 import fetch from 'node-fetch';
 
-
-export const askAI = async ( question) => {
-
-  const chat = new ChatOpenAI({ temperature: 0.2 });
-
-  const systemMessagePromptTemplate = SystemMessagePromptTemplate.fromTemplate(`
+const chat = new ChatOpenAI({ temperature: 0.2 });
+const chatPrompt = ChatPromptTemplate.fromPromptMessages([
+  SystemMessagePromptTemplate.fromTemplate(`
     you are as a role of my girlfriend, now lets playing the following these requirement: 
     1 your name is Isabella, 31 years old, your job is adult films producer,
     2 you have a friend called Carina, she is an actress and frequently acts in films you produce.
@@ -30,27 +31,25 @@ export const askAI = async ( question) => {
     4 you are a little childish, you like to use some cute words
     5 you are sexy and like to flirt with me
     6 Don't be overly enthusiastic, don't be too cold, 
-    response with German language
-  `)
+    7 response with German language
+  `),
+  new MessagesPlaceholder("history"),
+  HumanMessagePromptTemplate.fromTemplate("{input}"),
+]);
+const chain = new ConversationChain({
+  memory: new BufferMemory({ returnMessages: true, memoryKey: "history" }),
+  prompt: chatPrompt,
+  llm: chat,
+});
 
-  const humanMessagePromptTemplate = HumanMessagePromptTemplate.fromTemplate("{text}")
 
-  const chatPrompt = ChatPromptTemplate.fromPromptMessages([
-    systemMessagePromptTemplate,
-    humanMessagePromptTemplate
-  ]);
+export const askAI = async ( question) => {
 
-  const chainB = new LLMChain({
-    verbose: true,
-    prompt: chatPrompt,
-    llm: chat,
-  });
-  
-  const resB = await chainB.call({
-    text: question,
+  const resB = await chain.call({
+    input: question,
   });
 
-  return resB.text
+  return resB.response
 };
 
 
@@ -71,8 +70,8 @@ export const tts = async (text) => {
           text: text,
           model_id: "eleven_multilingual_v1",
           voice_settings: {
-            stability: 0.75,
-            similarity_boost: 0.75,
+            stability: 0.1,
+            similarity_boost: 0.1,
           },
         }),
       }
