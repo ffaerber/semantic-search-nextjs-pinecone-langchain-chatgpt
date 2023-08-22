@@ -69,6 +69,7 @@ export default function Home() {
         body: JSON.stringify(query)
       })
       const json = await result.json()
+      console.log(json)
       setResult(json.data)
       setAudioFile(json.file)
       setLoading(false)

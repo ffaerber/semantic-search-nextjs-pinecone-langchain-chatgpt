@@ -1,0 +1,261 @@
+ABOUT Felix
+
+I have been working as a web developer for over 15 years, working for large listed companies such as Audi, Hermes, Telefonica or EnBW as well as small, rapidly growing start-ups (growth rates of 400% per year). My scope of work  is full stack, meaning  from UX and  frontend to backend down to the infrastructure. In the past years I have focused on development in JavaScript and in the DevOps area with Docker. With this know-how I have worked in various teams in recent years, sometimes as developer of the API gateways with unit and integration tests or as a DevOps developer who configured the CI/CD pipeline, logging and monitoring. As a lead developer, I guided and intrinsically motivated all team members with a hands-on mentality, which led to a healthy and positive working atmosphere and ultimately to a successful project.
+PROJECTS
+
+
+
+
+DB Systel GmbH, Frankfurt/Remote — Full Stack Developer
+7.2022 - 6.2023
+I Helped to extend to more languages and more features for monitoring the translation process. In the KITT Application i also build a CICD pipeline form Gitlab to  Azure App Service.
+NodeJs, Docker, TypeScript, Angular, Azure DevOps, Microsoft, Speech to Text, Text to Speech, CI/CD, Websockets, OpenAI, DeepL, NLP, AI Model Training
+
+
+
+
+Thalia, Düsseldorf/Remote — React Developer
+4.2022 - 7.2022
+Improving the existing douglas.de webshop and implementing a product review form for mobile and web.
+TypeScript, React, Redux, ionic, capacitor, bazaarvoice
+
+
+
+
+Study, Paphos/Remote — Full Stack EVM Developer
+11.2021 - 4.2022
+I study the depth of Full Stack EVM Development.
+Solidity, Diamonds, UUPS, ERC1967, sidechains, ETH2, EthSwarm, ERC20, token bridge, hardhat, Chain Forking, web3-react, multi wallet, multi chain hardhat project 
+
+
+scout24, Berlin/Remote — React Developer
+8.2021 - 10.2021
+Improving the existing immobilienscout24.de/maklervergleich react application
+React, Redux, XState, TypeScript 
+
+
+ffaerber ltd, Paphos — Investor
+3.2021 - 7.2021
+Invested in crypto since 2016, it was time to take some profits and emigrate abroad with my Company and Familie.
+Ethereum, Cyprus, Sabbatical
+
+
+XDEFI, London/Remote — React Developer
+1.2021 - 3.2021
+xdefi.io is developing a metamask.io alternative with better UI and multi chain integration.  I helped by extending functionality and refactoring the react components also bootstrapping a storybook for the react components.
+chrome browser extension, React, Function Components, TypeScript. Redux, Material, UI, storybook.js, Blockchain, ETH, BTC, BNB, BSC, XDAI, dApp, Web3
+
+
+EWE/Gridlux, Oldenburg/Remote — React Developer
+4.2020 - 10.2020
+Adding new Features and improving performance of the React frontend gridlux application.
+React, Function Components, React Hooks, Redux, Reselect, UI/UX, Material UI, Leaflet
+
+
+
+
+Parental leave, Berlin — Father
+1.2020 - 4.2020
+I am taking parental leave for our second child.
+Reproduction
+
+
+Hermes Europe, Hamburg — React Developer
+8.2019 - 12.2019
+Hermes digilab developed a prototype enabling the delivery service to reduce costs. I helped by extending functionality in the react frontend application.
+React, Class Components, UI/UX, Redux, Flow, AWS, kubernetes, kops, DevOps
+
+
+EnBW, Karlsruhe — NodeJS Developer
+3.2019 - 8.2019
+Managing and updating the Chef Server infrastructure for a more automatic way of provisioning the ec2 machines.
+AWS, Fargate, Lambda, Docker,  ExpressJS, Node.js, DevOps
+
+
+Study, Berlin
+11.2018 - 3.2019
+After 10 years of successful freelance work, it was time to explore the trends of the next 10 years.
+vue.js (vue router, Vuex, Nuxt), functional programming, RxJS, IoT, Multiarch Docker (ARM), Serverless, Blockchain, Ethereum (truffle, ethers.js, openzeppelin, solidity, geth, swarm, web3.js, whisper, erc20, tokenization), IPFS, cryptoeconomics
+
+
+GE/Jenbacher, Jenbach (AT) / Remote  — Chef Developer
+5.2018 - 11.2018
+Managing and updating the Chef Server infrastructure for a more automatic way of provisioning of the ec2 machines.
+Chef, AWS
+
+
+SoftwareAG/Cumulocity, Düsseldorf — DevOps
+1.2018 - 5.2018
+Tried to build an automatic way to provision Kubernetes MultiMaster Cluster with Chef. The project was unfortunately not successful.
+Kubernetes, Docker, Chef, IoT, Karaf
+
+
+Telefonica/Geeny, Berlin — DevOps
+5.2017 - 11.2017
+Helping to Migrate the Docker Compose Cluster to a Docker Swarm Cluster. Also helping to add Monitoring and Logging.
+GitOps, DevOps, Docker Swarm, Prometheus, ELK, GitLab CI 
+
+
+SoftwareAG/Cumulocity, Düsseldorf — Chef Developer
+5.2017 - 6.2017
+Advisory and executing the Migration of Chef 10 to a Chef 13, but also helping with the migration of the ChefServer and introducing new Chef Workflows. 
+Chef, Chef Provisioning, AWS, Ruby, CentOS7, Java, Karaf
+
+
+Buzzn, Munich/Remote — Full Stack Developer
+11.2016 - 4.2017
+Helping to move from a Chef/AWS Server Infrastruktur to a DockerSwarm DigitalOcean Container Infrastruktur.  
+CI/CD, DevOps, GitOps, Prometheus, Grafana, Docker, Docker Swarm 
+
+
+Parental leave, Berlin — Father
+9.2016 - 11.2016
+I take parental leave for our first child
+Reproduction
+
+
+TD Reply, Berlin — Full Stack Developer
+7.2016 - 9.2016
+The Customers of TD Reply  have different data sources and want to better understand what the data means. TD built a tool that helps with this, which I helped to transition from a prototype to a produkt.
+Rails, React, D3, highcharts, Mongodb, Google Ads api 
+
+
+Buzzn, Munich/Remote — Full Stack Developer
+2.2016 - 7.2016
+In order to gain independence from suppliers in the area of ​​smart meter measurement solutions,  a custom measurement solution was developed: an OpenSource hard and software based d0-reader.
+Mongodb, Node.js, PM2, Express.js, BabelJS, Docker, Raspberry Pi3, SmartMetering
+
+
+Siewert & Kau, Bergheim/Remote — Ember Developer
+11.2015 - 2.2016
+Further development of the Siewert & Kau WebShop mobile ember app.
+EmberJS, SASS
+
+
+Audi, Ingolstadt — Chef Developer
+6.2015 - 9.2015
+Improve the existing MMB deployment process with Docker and Chef.[a][b]
+Chef, Docker, Java/J2EE
+
+
+Syzygy/Hi-Res, Berlin — Ember Developer
+4.2015 - 5.2015
+Further development of the 2015 Mcdonalds Burger Battle configurator.
+EmberJS, SASS
+
+
+SAP/Hybris, Munich — Chef Developer
+4.2014 - 2.2015
+After the purchase of Hybris by SAP, the automation of the hybris software was  to be implemented in the SAP DataCenter. I had an advisory role, but also helped with the implementation. I also developed a CMDB app that controls the deployment and scaling of the environments.
+Chef, rundeck, Rails, J2EE, SAP(Monsoon, HANA, HEC),, PostgreSQL, AWS OpenStack
+
+
+Buzzn, Munich — Co-Founder and Full Stack Developer
+11.2013 - 7.2017
+Buzzn decentralizes energy creation and consumption. People who use a small generating plant (e.g. combined heat and power, solar or wind power plants) and produce more electricity than they themselves need, share the excess power with other  consumers via buzzn, creating a sharing economy for electricity[c][d].
+Rails, Chef, AWS(EC2,RDS,S3,Cloudfront,SES,EIP,ELB), MongoDB, Redis, PostgreSQL, Chef, D3.js, WebSocket, Smart-Metering(Hardware, IoT)
+
+
+SolarStarters, Berlin — Founder and Full Stack Developer
+4.2013 - 11.2013
+SolarStarters aimed to crowdfund solar parks, with the generated surpluses to be paid out to investors in the form of a remaining return. Due to a reduction in Government subsidies the project had to be cancelled.
+Rails, SASS, Chef, AWS(EC2,EBS,S3), MySQL, Google Maps
+
+
+GameGenetics, Berlin — Rails Developer
+4.2012 - 4.2013
+Developing a CMS to manage images for mobile and browser gaming advertising and helping with the Rails Admin Interfaces.
+Rails, Imagemagick, rails_admin
+
+
+raumHOCH, Berlin — Rails and Chef Developer
+6.2011 - 2.2012
+Develop a CMS that allows to create, manage and distribute interactive presentations, which then run on Windows PCs and Apple iPads.
+Rails, MySQL, FFmpeg, Imagemagick, AWS, Chef
+
+
+Situado, Berlin — Co-Founder and Full Stack Developer
+2.2011 - 5.2011
+situado.de is an online insurance and retirement configurator that was developed as a prototype and was never developed further.
+Rails, AWS[e][f]
+
+
+Helppo, Hamburg — Flash and Rails Developer
+11.2010 - 2.2011
+Helping with Design and Flash Development but later worked on the Rails Backend Team
+Flex, Rails, Chef, AWS, XMPP 
+
+
+Heye Digital Lab, Hamburg — Flash and Rails Developer
+3.2009 - 5.2010
+Building WebSpecials for Casio and HohesC.
+Flex, AS3,  Rails, PureMVC, RubyAMF, C4D, MySQL, PaperVision3d, Facebook API
+
+
+DDD Design, Hamburg — Flash Developer
+2.2008 - 3.2009
+Developing Audi car-configurators and games with database connection.
+Flex, AS3, PHP
+
+
+Jung von Matt/next, Hamburg — Flash Developer
+7.2007 - 1.2008
+Building mainly Flash Sites and WebSpecials  for big brands such as Mercedes
+Flash, AS3, Papervision3D
+
+
+
+
+SuperReal, Hamburg — Junior Digital Designer
+8.2006 - 6.2007
+Building Flash banners animations and configurators but also working with Print Media and building illustrations and catalogs.
+Flash, AS3, AfterEffects, InDesign, Photoshop
+
+
+Designwerk, Neumünster — Trainee
+5.2003 - 5.2006
+Training as a media designer. Building Flash banners and print advertisements.
+Flash, AS2, Cinema4D, AfterEffects, InDesign, Photoshop
+
+
+
+
+
+
+	NEXT TOOLS
+Learning and beginning to use
+web3, Blockchain, Solidity, TypeScript, Ethereum,
+Cloud Native, AI
+
+
+CURRENT TOOLS
+In daily use
+Web2, Web3, JavaScript, TypeScript, React, Node.js, Docker, CloudComputing,
+LANGUAGES
+
+German (mother tongue) English (business fluent)
+COMPANY
+
+ffaerber ltd
+CRN: HE413441
+VAT: CY10413441F
+CONTACT
+
+Tepelenio Court 2nd floor, Tepeleniou 13, 
+8010 Paphos,
+Cyprus, EU
+
+
++49 173 893 43 43
++357 96186478
+
+
+ffaerber.ltd@protonmail.com
+	
+
+[a]an welcher Stelle, für was?
+[b]anstelle von selbstgeschriebenen bash scripten.
+[c]Was hast Du da gemacht bei der Sache? Was war deine Rolle/Aufgabe?
+[d]CoFounder. Idee und umsetzung
+[e]Wäre schon gut, hier irgendeine Erklärung parat zu haben, warum es nicht weiter entwickelt wurde, so wie bei Solarstarters
+[f]cofounder haben das projekt verlassen. felix und lino.
