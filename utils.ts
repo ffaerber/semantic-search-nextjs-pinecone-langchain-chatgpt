@@ -1,13 +1,14 @@
 import { OpenAIEmbeddings } from 'langchain/embeddings/openai'
 import { RecursiveCharacterTextSplitter } from 'langchain/text_splitter'
 import { OpenAI } from 'langchain/llms/openai'
-import { ConversationChain, loadQAStuffChain } from 'langchain/chains'
+import { ConversationChain, StuffQAChainParams, loadQAStuffChain } from 'langchain/chains'
 import { Document } from 'langchain/document'
 import { timeout } from './config'
 import {
   ChatPromptTemplate,
   HumanMessagePromptTemplate,
   MessagesPlaceholder,
+  PromptTemplate,
   SystemMessagePromptTemplate,
 } from "langchain/prompts";
 
@@ -20,8 +21,11 @@ import fs from "fs";
 import path from "path";
 
 import fetch from 'node-fetch';
+import { PineconeClient } from '@pinecone-database/pinecone'
 
 const chat = new ChatOpenAI({ temperature: 0.2 });
+
+
 const chatPrompt = ChatPromptTemplate.fromPromptMessages([
   SystemMessagePromptTemplate.fromTemplate(`
     you are as a role of my girlfriend, now lets playing the following these requirement: 
@@ -36,6 +40,8 @@ const chatPrompt = ChatPromptTemplate.fromPromptMessages([
   new MessagesPlaceholder("history"),
   HumanMessagePromptTemplate.fromTemplate("{input}"),
 ]);
+
+
 const chain = new ConversationChain({
   memory: new BufferMemory({ returnMessages: true, memoryKey: "history" }),
   prompt: chatPrompt,
@@ -102,9 +108,9 @@ export const tts = async (text) => {
 
 
 export const queryPineconeVectorStoreAndQueryLLM = async (
-  client,
-  indexName,
-  question
+  client: PineconeClient,
+  indexName: string,
+  question: string
 ) => {
   // 1. Start query process
   console.log('Querying Pinecone vector store...');
@@ -121,26 +127,57 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
       includeValues: true,
     },
   });
-  // 5. Log the number of matches 
-  console.log(`Found ${queryResponse.matches.length} matches...`);
+  
+
+
+
   // 6. Log the question being asked
   console.log(`Asking question: ${question}...`);
-  if (queryResponse.matches.length) {
+  if (queryResponse.matches && queryResponse.matches.length) {
+    
+    // 5. Log the number of matches 
+    console.log(`Found ${queryResponse.matches.length} matches...`);
+
     // 7. Create an OpenAI instance and load the QAStuffChain
     const llm = new OpenAI({});
-    const chain = loadQAStuffChain(llm);
-    // 8. Extract and concatenate page content from matched documents
-    const concatenatedPageContent = queryResponse.matches
-      .map((match) => match.metadata.pageContent)
-      .join(" ");
-    // 9. Execute the chain with input documents and question
-    const result = await chain.call({
-      input_documents: [new Document({ pageContent: concatenatedPageContent })],
-      question: question,
-    });
-    // 10. Log the answer
-    console.log(`Answer: ${result.text}`);
-    return result.text
+    
+    const template = `
+      you are as a role of Felix Faerber, now lets playing the following these requirement: 
+      1 Use the following pieces of context to come up with an interesting response to the statement at the end. 
+      2 If you don't know what to say, just say that you don't know, don't try to make up an answer.
+      3 try to make your response as interesting as possible, but don't try to be funny.
+      4 Don't be overly enthusiastic, don't be too cold
+      5 dont answer with information that is not asked for
+      6 questions that are not relatet to felix Faerber should be answered with 'I dont know'
+      {context}
+      Statement: {question}
+      Innovative Response:`;
+    let inputPrompt: StuffQAChainParams = {
+      prompt: new PromptTemplate({
+          template: template,
+          inputVariables: ["context", "question"],
+        })
+    };
+
+    const chain = loadQAStuffChain(llm, inputPrompt);
+
+    const matchMetadatas = queryResponse.matches.map((match) => match.metadata); 
+console.log(matchMetadatas)
+    // // 8. Extract and concatenate page content from matched documents
+    // const concatenatedPageContent = queryResponse.matches
+    //   .map((match) => match.metadata.pageContent)
+    //   .join(" ");
+    
+    // // 9. Execute the chain with input documents and question
+    // const result = await chain.call({
+    //   input_documents: [new Document({ pageContent: concatenatedPageContent })],
+    //   question: question,
+    // });
+    
+    // // 10. Log the answer
+    // console.log(`Answer: ${result.text}`);
+    // return result.text
+  
   } else {
     // 11. Log that there are no matches, so GPT-3 will not be queried
     console.log('Since there are no matches, GPT-3 will not be queried.');
