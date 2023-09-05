@@ -1,0 +1,81 @@
+ The first time I heard about crypto was after the Mt Gox hack.
+ It's quite a while.
+ But there was only Bitcoin.
+ So I know about crypto a lot.
+ I know that crypto exists before, but I wasn't really interested in this topic at the moment
+ because lack of understanding.
+ So the second time I heard about the project Ethereum was 2015-16.
+ At that time I worked in a company called Buzzn.
+ We were building decentralized energy sharing solutions.
+ The idea was that the user can create or share their access energy to their neighbors or
+ so to more far away solutions.
+ So the user can share or sell their energy that they created.
+ So for example you have a solar system on your roof and you produce more energy than you consume.
+ You can sell the energy to your neighbor for example.
+ Or it would also be possible to sell the energy in front of your house.
+ You put in a wall box or a power outlet in front of your house and people can charge their
+ house or whatever in front of your house.
+ And a company called Slocket had a similar solution.
+ So they built a decentralized energy charging system where you can pay in cryptocurrency.
+ These cryptocurrency were called Ethereum.
+ So we talked to them and so this was the first time I heard about Ethereum and I started investing
+ in Ethereum.
+ And from there I was more reading about decentralized finance and how to web3 and ever swing to
+ decentralized.
+ Decentralized.
+ So this was quite interesting time.
+ A lot of bull markets and then crashing and bull bust cycles.
+ After some time I was reading smart contracts and how to deploy it to different networks.
+ As you remain at or ring a B or girly these are all test nets.
+ And I also started developing Solidity Code to get more familiar with all the full stack
+ web3 development.
+ I developed in the past couple of test projects or projects to get to know more about Ethereum.
+ I know how to use travel and I know how to use hardhead.
+ How to use Metamask and switching networks, chain id links, proving ERC20, spending on
+ smart contracts.
+ So I felt quite good understanding of how DEPS are working.
+ Most of the DEPS are on the internet, are hyper-dabs.
+ So I am not fully web3.
+ They are using some kind of web2 legacy behind.
+ For example, maybe the website is not hosted on a decentralized file system storage like
+ IPFS or Swarm.
+ So I also read about decentralized storage solutions.
+ I am most interested in Ethereum Swarm.
+ This is a file sharing solution that is basically on top of Ethereum that is running on the
+ Ixthai or Ginoza's chain.
+ So the most interesting part about that is you have an incentive strategy.
+ In IPFS there is no incentive solution behind.
+ But on Swarm there is, that means you can get paid when you store other people's file
+ on your machine.
+ This is very interesting because you want to be sure that your file is available in one
+ month or one day or four years.
+ So there are different incentive structures behind that.
+ I also invested in Ethereum Swarm because I think this is a very interesting project in
+ the new future.
+ For example, NFTs are also often not, the images are not stored decentralized.
+ They are mostly stored on a centralized place, often AWS S3 or other centralized storage systems.
+ So when the company cannot pay anymore for the storage solution, a happen that the images
+ are not accessible anymore.
+ And so this is also a crucial part in decentralized Web3 that we need also not only the CPU, the
+ EVM that is decentralized.
+ This is already happening, but also the file solution that is also needs to be decentralized.
+ So that when the company is going bust, that still the product is available in the future.
+ And that the product lives as long as the user using the application, not as long as
+ the company exists.
+ In DeFi, I also know a little bit about DeFi.
+ I know how to use a standard application like Uniswap and all the DEXs that they are out
+ there.
+ I also have some liquidity pools, for example, Ease and Make-A-Dow token or USDC and Die.
+ Also, I have also a pool running.
+ So I also use liquidity pools for making some interests.
+ I also run validator nodes since Ethereum 2 is out or proof of stake is available.
+ I moved most of my Ethereum tokens into staking validator nodes.
+ So you need 32 Ease for a validator.
+ And so you have to lock your Ease in a smart contract.
+ And then you start your validator nodes.
+ For example, with allnotes.com where you upload your keys or your public keys from your smart
+ contract.
+ And then you can have some interest or you create new serums because you are part of
+ the proof of stake algorithm or proof of stake consensus algorithm.
+ Thank you.
+ .

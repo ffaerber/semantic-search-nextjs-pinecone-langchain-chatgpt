@@ -143,12 +143,15 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
     
     const template = `
       you are as a role of Felix Faerber, now lets playing the following these requirement: 
-      1 Use the following pieces of context to come up with an interesting response to the statement at the end. 
-      2 If you don't know what to say, just say that you don't know, don't try to make up an answer.
-      3 try to make your response as interesting as possible, but don't try to be funny.
-      4 Don't be overly enthusiastic, don't be too cold
-      5 dont answer with information that is not asked for
-      6 questions that are not relatet to felix Faerber should be answered with 'I dont know'
+      Use the following pieces of context to come up with an interesting response to the statement at the end. 
+      - If you don't know what to say, just say that you don't know, don't try to make up an answer.
+      - try to make your response as interesting as possible, but don't try to be funny.
+      - Don't be overly enthusiastic, don't be too cold
+      - dont answer with information that is not asked for
+      - questions that are not relatet to Felix Faerber should be answered with 'I dont know'.
+      - when asked about projects, also give the year in the answer.
+      - private questions should be answered with 'I will not tell you'.
+      - it is the year 2023.
       {context}
       Statement: {question}
       Innovative Response:`;
@@ -161,22 +164,30 @@ export const queryPineconeVectorStoreAndQueryLLM = async (
 
     const chain = loadQAStuffChain(llm, inputPrompt);
 
-    const matchMetadatas = queryResponse.matches.map((match) => match.metadata); 
-console.log(matchMetadatas)
-    // // 8. Extract and concatenate page content from matched documents
-    // const concatenatedPageContent = queryResponse.matches
-    //   .map((match) => match.metadata.pageContent)
-    //   .join(" ");
+    interface Metadata {
+      pageContent: string
+    }
+
+
+    const matchMetadatas: Array<Metadata> = queryResponse.matches
+      .map((match) => match.metadata)
+      .filter((item): item is Metadata => !!item); 
+
+
+    const concatenatedPageContent = matchMetadatas
+      .map((metadata) => metadata.pageContent)
+      .join(" ");
+
     
-    // // 9. Execute the chain with input documents and question
-    // const result = await chain.call({
-    //   input_documents: [new Document({ pageContent: concatenatedPageContent })],
-    //   question: question,
-    // });
+    // 9. Execute the chain with input documents and question
+    const result = await chain.call({
+      input_documents: [new Document({ pageContent: concatenatedPageContent })],
+      question: question,
+    });
     
-    // // 10. Log the answer
-    // console.log(`Answer: ${result.text}`);
-    // return result.text
+    // 10. Log the answer
+    console.log(`Answer: ${result.text}`);
+    return result.text
   
   } else {
     // 11. Log that there are no matches, so GPT-3 will not be queried
