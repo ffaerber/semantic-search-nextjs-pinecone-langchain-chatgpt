@@ -9,13 +9,16 @@ import {
 } from '../../../utils'
 
 import { indexName } from '../../../config'
+import path from 'path'
 
 export async function POST() {
 
-  const loader = new DirectoryLoader('./documents', {
-    ".txt": (path) => new TextLoader(path),
-    ".md": (path) => new TextLoader(path),
-    ".pdf": (path) => new PDFLoader(path)
+  const documentsDirectory = path.join(process.cwd(), 'documents')
+
+  const loader = new DirectoryLoader(documentsDirectory, {
+    ".txt": (_path) => new TextLoader(_path),
+    ".md": (_path) => new TextLoader(_path),
+    ".pdf": (_path) => new PDFLoader(_path)
   })
 
   const docs = await loader.load()
