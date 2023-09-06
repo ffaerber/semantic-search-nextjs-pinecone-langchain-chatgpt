@@ -92,13 +92,12 @@ export default function Home() {
           <div className="flex flex-col space-y-2 p-4">
 
             <Message key={1111111} text={"Hello I'am a Felix Faerber. or rather an AI version of it. ask me how I can help you with a software development. all answers are without guarantee. "} type={'answer'} date={1111111}/>
-            
             {messages.map((msg) => {
               return (
                 <Message key={msg.date} text={msg.text} type={msg.type} date={msg.date}/>
               )
             })}
-
+            
             {
               loading && <Message key={99999999999} text={'felixAI is typing...'} type={'answer'} date={99999999999}/>
             }
