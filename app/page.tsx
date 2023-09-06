@@ -85,13 +85,13 @@ export default function Home() {
 
 
   return (
-    <div className="flex h-screen flex-col h-[100dvh]">
+    <div className="flex h-screen flex-col h-[100svh]">
 
 
         <div className="flex-grow overflow-y-auto">
           <div className="flex flex-col space-y-2 p-4">
 
-            <Message key={1111111} text={"Hello I'am a Felix Faerber. or rather an AI version of it. ask me how I can help you with a software development. all answers are without guarantee. "} type={'answer'} date={1111111}/>
+          <Message key={1111111} text={"Hello I'am a Felix Faerber. or rather an AI version of it. ask me how I can help you with a software development. all answers are without guarantee. "} type={'answer'} date={1111111}/>
             {messages.map((msg) => {
               return (
                 <Message key={msg.date} text={msg.text} type={msg.type} date={msg.date}/>
