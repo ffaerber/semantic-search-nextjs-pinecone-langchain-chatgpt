@@ -116,7 +116,7 @@ export default function Home() {
           <button 
             className="ml-2 border-black border-2 rounded-md bg-blue-500 px-4 py-2 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF]"
             onClick={sendQuery} 
-          >Send</button>
+          >SEND</button>
         </div>
 
       </div>
