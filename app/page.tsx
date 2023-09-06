@@ -84,10 +84,19 @@ export default function Home() {
 
 
   return (
+    <div className="flex h-screen flex-col">
 
 
-      <div className="flex-1 p:2 sm:p-6 justify-between flex flex-col h-screen">
         <div id="messages" className="flex flex-col space-y-4 p-3 overflow-y-auto scrollbar-thumb-blue scrollbar-thumb-rounded scrollbar-track-blue-lighter scrollbar-w-2 scrolling-touch">          
+
+        </div>
+
+
+
+        <div className="flex-grow overflow-y-auto">
+          <div className="flex flex-col space-y-2 p-4">
+
+
           <Message key={1111111} text={"Hello I'am a Felix Faerber. or rather an AI version of it. ask me how I can help you with a software development. all answers are without guarantee. "} type={'answer'} date={1111111}/>
           {messages.map((msg) => {
             return (
@@ -97,12 +106,26 @@ export default function Home() {
           {
             loading && <Message key={99999999999} text={'felixAI is typing...'} type={'answer'} date={99999999999}/>
           }
+            
+          </div>
         </div>
 
+        <div className="flex items-center p-4">
+          <input 
+            type="text" 
+            placeholder="Type your question..." 
+            className="placeholder-gray-500 focus:placeholder-white w-full fw-96 border border-black border-2 px-4 py-2 focus:outline-none focus:shadow-[2px_2px_0px_rgba(0,0,0,1)] focus:bg-[#FFA6F6] active:shadow-[2px_2px_0px_rgba(0,0,0,1)] rounded-md" 
+            value={query}
+            onChange={e => setQuery(e.target.value)}
+          />
+          <button 
+            className="ml-2 border-black border-2 rounded-md bg-blue-500 px-4 py-2 bg-[#A6FAFF] hover:bg-[#79F7FF] hover:shadow-[2px_2px_0px_rgba(0,0,0,1)] active:bg-[#00E1EF]"
+            onClick={sendQuery} 
+          >SEND</button>
+        </div>
 
-        <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
+        {/* <div className="border-t-2 border-gray-200 px-4 pt-4 mb-2 sm:mb-0">
           <div className="relative flex">
-
             <input type="text" 
                   placeholder="Write your question!" 
                   value={query} 
@@ -119,11 +142,9 @@ export default function Home() {
                 <span className="font-bold">Send</span>
               </button>
             </div>
-
           </div>
-        </div>
+        </div> */}
+
       </div>
-
-
   )
 }
